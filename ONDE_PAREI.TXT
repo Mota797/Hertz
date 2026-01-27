@@ -1,0 +1,1 @@
+Tenho que acabar o models de confirmação e salvamento das informações da compra, além de adicionar o app no projeto, junto com as urls

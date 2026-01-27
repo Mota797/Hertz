@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    {% for produto in produtos %}
+        <div>
+            <a href="{% url 'detalhe_produto' produto.pk %}">
+                <p>{{ produto.nome }}</p>
+                <p>{{ produto.preco_formatado }}</p>
+                <p>{{ produto.quantidade_estoque }}</p>
+            </a>
+            <form method="post" action="{% url 'adicionar_produto' produto.id %}">
+                {% csrf_token %}
+                <button type="submit">Adicionar ao carrinho</button>
+            </form>
+        </div>
+    {% endfor %}
+</main>
+{% endblock %}

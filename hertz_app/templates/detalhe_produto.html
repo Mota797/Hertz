@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+    <h1>{{ produto.nome }}</h1>
+    <h3>{{ produto.preco_formatado }}</h3>
+    <p>Quantidade em Estoque: {{ produto.quantidade_estoque }}</p>
+    <form method="post" action="{% url 'adicionar_produto' produto.id %}">
+        {% csrf_token %}
+        <button type="submit">Adicionar ao carrinho</button>
+    </form>
+    {% if produto.media_avaliacoes %}
+        <p>{{ produto.media_avaliacoes }}</p>
+    {% else %}
+        <p>Não há avaliações</p>
+    {% endif %}
+</main>
+{% endblock %}

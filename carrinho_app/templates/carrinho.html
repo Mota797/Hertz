@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load l10n %}
+{% block content %}
+<h1>Carrinho</h1>
+    <ul>
+        {% for item in itens %}
+            <li>
+                <ul>
+                    <li>
+                        <p>{{ item.produto.nome }}</p>
+                    </li>
+                    <li>
+                        <p>{{ item.produto.preco_formatado }}</p>
+                    </li>
+                    <li>
+                        <p>{{ item.quantidade }}</p>
+                    </li>
+                    <li>
+                        <form method="post" action="{% url 'remover_produto' item.id %}">
+                            {% csrf_token %}
+                            <button type="submit">Remover Produto</button>
+                        </form>
+                    </li>
+                </ul>
+            </li>
+            {% empty %}
+                <h2>Seu Carrinho está Vazio</h2>
+        {% endfor %}
+        {% if itens %}
+            <li>
+                <p><strong>Total:</strong>{{ total|floatformat:2|unlocalize }}</p>
+            </li>
+        {% endif %}
+    </ul> 
+{% endblock %}
