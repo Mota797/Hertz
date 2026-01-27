@@ -1,1 +1,1 @@
-Tenho que acabar o models de confirmação e salvamento das informações da compra, além de adicionar o app no projeto, junto com as urls
+Tenho que acabar a parte de confirmacao de compra, já fiz um models e views, agora preciso impedir recompra, ver se ta realmente funcionando com um botao no carrinho e criar pagina de sucesso html
