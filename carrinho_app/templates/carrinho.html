@@ -31,5 +31,7 @@
                 <p><strong>Total:</strong>{{ total|floatformat:2|unlocalize }}</p>
             </li>
         {% endif %}
+
+        <a href="{% url 'pagina_confirmacao_compra' %}">Comprar</a>
     </ul> 
 {% endblock %}

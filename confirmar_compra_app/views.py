@@ -5,6 +5,8 @@ from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db import transaction
 from django.contrib import messages
+from django.db.models import F
+
 
 class ConfirmacaoCompra(LoginRequiredMixin, View):
 
@@ -45,31 +47,56 @@ class ConfirmacaoCompra(LoginRequiredMixin, View):
         )
 
     def criar_itens_e_atualizar_estoque(self, request, carrinho, compra):
-        for item in carrinho.itens.all():
-            produto = item.produto
+        for item in carrinho.itens.select_related("produto"):
 
-            # Verificação de estoque
-            if item.quantidade > produto.estoque:
+            produto = Produto.objects.select_for_update().get(
+                id=item.produto.id
+            )
+
+            if item.quantidade > produto.quantidade_estoque:
                 messages.error(
                     request,
-                    f"Estoque insuficiente para o produto {produto.nome}."
+                    f"Estoque insuficiente para {produto.nome}"
                 )
                 raise Exception("Estoque insuficiente")
 
-            # Criar item da compra
+            # cria item da compra
             Item_Compra.objects.create(
                 compra=compra,
                 produto=produto,
                 quantidade_comprada=item.quantidade,
-                preco_unitario=produto.preco
+                preco_unitario=produto.preco_decimal()
             )
 
-            # Atualizar estoque
-            produto.estoque -= item.quantidade
+            # atualiza estoque com segurança
+            produto.quantidade_estoque = F("quantidade_estoque") - item.quantidade
             produto.save()
 
     def limpar_carrinho(self, carrinho):
         carrinho.itens.all().delete()
+        
+
+class PaginaSucesso(LoginRequiredMixin, TemplateView):
+    template_name = "compra_sucesso.html"
+
+class PaginaConfirmacaoCompra(LoginRequiredMixin, TemplateView):
+    template_name = "pagina_confirmacao_compra.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+
+        carrinho, criado = Carrinho_Compras.objects.get_or_create(
+            usuario=self.request.user
+        )
+
+        context['carrinho'] = carrinho
+        context['itens'] = carrinho.itens.all()
+        context['total'] = carrinho.preco_total
+
+        return context
+
+
 
 # class ConfirmacaoCompra(LoginRequiredMixin, View):
     

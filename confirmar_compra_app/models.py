@@ -24,8 +24,9 @@ class Item_Compra(models.Model):
     compra = models.ForeignKey(Confirmacao_Compra, on_delete=models.CASCADE, related_name='itens')
     produto = models.ForeignKey(Produto, on_delete=models.SET_NULL, null=True)
     quantidade_comprada = models.PositiveIntegerField()
-    preco_unitario = models.DecimalField(10, 2)
+    preco_unitario = models.DecimalField(max_digits=10, decimal_places=2)
 
     @property
     def subtotal(self):
         return self.quantidade_comprada * self.preco_unitario
+

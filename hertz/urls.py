@@ -25,6 +25,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/register/', Criacao_usuario.as_view(), name='register'),
     path('carrinho/', include('carrinho_app.urls')),
+    path('confirmar_compra/', include('confirmar_compra_app.urls')),
     path('', include('hertz_app.urls'))
 ]
 

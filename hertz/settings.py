@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hertz_app',
     'carrinho_app',
+    'confirmar_compra_app'
 ]
 
 MIDDLEWARE = [
