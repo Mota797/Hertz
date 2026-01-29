@@ -1,1 +1,0 @@
-1 - Link da explicação de autenticação de usuário do django: https://docs.djangoproject.com/en/6.0/topics/auth/default/#top
