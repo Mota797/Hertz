@@ -25,15 +25,11 @@ class ConfirmacaoCompra(LoginRequiredMixin, View):
 
             self.limpar_carrinho(carrinho)
 
-            compra.status = "finalizada"
             compra.save()
 
             messages.success(request, "Compra realizada com sucesso!")
             return redirect("pagina_sucesso")
 
-    # ==========================
-    # MÉTODOS AUXILIARES
-    # ==========================
 
     def get_carrinho(self, request):
         return get_object_or_404(Carrinho_Compras, usuario=request.user)
@@ -43,7 +39,6 @@ class ConfirmacaoCompra(LoginRequiredMixin, View):
             usuario=request.user,
             carrinho=carrinho,
             metodo_pagamento=request.POST.get("metodo_pagamento"),
-            status="em_andamento"
         )
 
     def criar_itens_e_atualizar_estoque(self, request, carrinho, compra):
