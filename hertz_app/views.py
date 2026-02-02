@@ -13,7 +13,3 @@ class detail_product(DetailView):
     model = Produto
     template_name = 'detalhe_produto.html'
 
-@login_required
-def aaaaa(request):
-    print(request.session)
-    return render(request, 'a.html')
