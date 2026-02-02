@@ -4,7 +4,7 @@ from .models import Confirmacao_Compra, Item_Compra
 # Register your models here.
 @admin.register(Confirmacao_Compra)
 class ConfirmacaCompraAdmin(admin.ModelAdmin):
-    list_display = ('usuario', 'metodo_pagamento','carrinho','data_compra',)
+    list_display = ('usuario', 'metodo_pagamento','carrinho','data_compra','status')
 
 @admin.register(Item_Compra)
 class ItemCompraAdmin(admin.ModelAdmin):

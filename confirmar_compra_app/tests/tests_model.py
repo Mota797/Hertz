@@ -19,6 +19,7 @@ class ConfirmacaoCompraTest(TestCase):
             usuario = self.usuario,
             metodo_pagamento = 'cartao_de_credito',
             carrinho = self.carrinho,
+            status = 'em_andamento'
             )
         
         self.item_compra = Item_Compra.objects.create(

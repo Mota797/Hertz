@@ -25,6 +25,7 @@ class ConfirmacaoCompra(LoginRequiredMixin, View):
 
             self.limpar_carrinho(carrinho)
 
+            compra.status = 'finalizada'
             compra.save()
 
             messages.success(request, "Compra realizada com sucesso!")
@@ -39,6 +40,7 @@ class ConfirmacaoCompra(LoginRequiredMixin, View):
             usuario=request.user,
             carrinho=carrinho,
             metodo_pagamento=request.POST.get("metodo_pagamento"),
+            status= 'em_andamento'
         )
 
     def criar_itens_e_atualizar_estoque(self, request, carrinho, compra):
