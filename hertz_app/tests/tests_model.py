@@ -11,15 +11,15 @@ class CriacaoProdutoTest(TestCase):
             username="Carlos",email="Carlos@email.com", password='uruguai', first_name="Carlos", last_name="Silva"
         )
 
-    def setUp(self):
-        self.produto = Produto.objects.create(
+        cls.produto = Produto.objects.create(
             nome='Microfone JBL', 
             preco=5999, 
             quantidade_estoque=90, 
             categoria='microfone', 
             imagem='padrao.png'
         )
-
+        
+    def setUp(self):
         self.avaliacao = Avaliacao.objects.create(
             usuario = self.usuario,
             nota_avaliacao = 5,
@@ -43,3 +43,9 @@ class CriacaoProdutoTest(TestCase):
         self.assertNotEqual(self.produto.quantidade_estoque, 80)
         self.assertNotEqual(self.produto.categoria, 'fone_de_ouvido')
         self.assertNotEqual(self.produto.imagem, 'padraao.png')
+
+    def test_avaliacao(self):
+        self.assertEqual(self.avaliacao.usuario, self.usuario)
+        self.assertEqual(self.avaliacao.nota_avaliacao, 5)
+        self.assertEqual(self.avaliacao.comentario_avaliacao, 'Ótimo produto, utilizo todos os dias para gravar meu podcast Universo Escuro e ele não me deu problema uma única vez, além disso, a qualidade é impecável, recomendo muito, especiamente pra quem é criador de conteúdo.')
+        self.assertEqual(self.avaliacao.produto, self.produto)
