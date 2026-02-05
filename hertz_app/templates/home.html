@@ -2,10 +2,11 @@
 
 {% block content %}
 <main>
+    <div class="grid-produtos">
     {% for produto in produtos %}
-        <div>
+        <div class="container-produto">
             <a href="{% url 'detalhe_produto' produto.pk %}">
-                <p>{{ produto.nome }}</p>
+                <p class="nome-produto">{{ produto.nome }}</p>
                 <p>{{ produto.preco_formatado }}</p>
                 <p>{{ produto.quantidade_estoque }}</p>
             </a>
@@ -15,5 +16,6 @@
             </form>
         </div>
     {% endfor %}
+    </div>
 </main>
 {% endblock %}

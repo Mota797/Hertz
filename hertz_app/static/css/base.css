@@ -21,6 +21,32 @@ a{
     text-decoration: none;
 }
 
-div{
-    background-color: #ff1234;
+.lista-cabecalho{
+    list-style-type: none;
+    display: flex;
 }
+
+.lista-cabecalho__item{
+    margin: 10px;
+}
+
+.grid-produtos{
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.container-produto{
+    line-break: auto;
+}
+
+.container-produto{
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 5px;
+    max-width: 15vw;
+}
+
+
+

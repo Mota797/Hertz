@@ -10,8 +10,16 @@
 </head>
 <body>
     <header>
-        <ul>
-            <li></li>
+        <ul class="lista-cabecalho">
+            <li class="lista-cabecalho__item">
+                <a href="{% url 'home' %}"><img src="{% static 'images/Hz_logo.png' %}" alt=""></a>
+            </li>
+            <li class="lista-cabecalho__item">
+                <a href="{% url 'carrinho' %}">Carrinho</a>
+            </li>
+            <li class="lista-cabecalho__item">
+                <a href="{% url 'login' %}">Entrar</a>
+            </li>
         </ul>
     </header>
         {% block content %}
