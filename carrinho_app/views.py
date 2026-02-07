@@ -44,7 +44,7 @@ class AdicionarProdutoCarrinho(LoginRequiredMixin, View):
         produto = get_object_or_404(Produto, id=item_id)
 
         
-        if produto.quantidade_estoque <= 0:
+        if produto.quantidade_estoque == 0:
             messages.error(request, "Produto sem estoque.")
             return redirect('carrinho')
 
@@ -63,7 +63,7 @@ class AdicionarProdutoCarrinho(LoginRequiredMixin, View):
                 item.quantidade += 1
             else:
                 messages.warning(request, "A Quantidade do Item adicionado atingiu seu limite em estoque.")
-                return redirect('carrinho')
+                return redirect(request.META.get('HTTP_REFERER'))
 
         item.save()
 
