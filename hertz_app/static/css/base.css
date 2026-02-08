@@ -16,6 +16,10 @@ header, footer{
     min-height: 10vh;
 }
 
+header{
+    background: linear-gradient(#FEEA3B,#ffffff);
+}
+
 a{
     color: #000000;
     text-decoration: none;
@@ -30,23 +34,55 @@ a{
     margin: 10px;
 }
 
+.imagem-cabecalho{
+    border-radius: 50%;
+    width: 10vw;
+}
+
 .grid-produtos{
-    margin: auto;
+    margin: 20px;
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
 
 .container-produto{
-    line-break: auto;
-}
-
-.container-produto{
     background-color: #f1f1f1;
     border-radius: 5px;
+    padding: 20px;
     margin: 20px;
-    padding: 5px;
-    max-width: 15vw;
+    max-width: 20vw;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
 }
 
+.imagem-produto{
+    width: 10vw;
+    min-height: 18vh;
+}
 
+.coluna-imagem, .coluna-nome-preco-estoque{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    margin-bottom: 0;
+}
+
+.coluna-nome-preco-estoque{
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.linha-imagem-texto-produto{
+    display: flex;
+    flex-direction: row;
+}
+
+.texto-produto{
+    margin-bottom: 20px;
+}
+
+.form-botao-add-carrinho{
+    margin-top: 0.5vw;
+}
 

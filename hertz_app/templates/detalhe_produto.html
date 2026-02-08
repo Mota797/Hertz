@@ -2,7 +2,7 @@
 
 {% block content %}
 <main>
-    <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+    <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="imagem-produto">
     <h1>{{ produto.nome }}</h1>
     <h3>{{ produto.preco_formatado }}</h3>
     <p>Quantidade em Estoque: {{ produto.quantidade_estoque }}</p>

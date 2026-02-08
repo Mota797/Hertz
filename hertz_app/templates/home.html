@@ -5,15 +5,21 @@
     <div class="grid-produtos">
     {% for produto in produtos %}
         <div class="container-produto">
-            <a href="{% url 'detalhe_produto' produto.pk %}">
-                <p class="nome-produto">{{ produto.nome }}</p>
-                <p>{{ produto.preco_formatado }}</p>
-                <p>{{ produto.quantidade_estoque }}</p>
-            </a>
-            <form method="post" action="{% url 'adicionar_produto' produto.id %}">
-                {% csrf_token %}
-                <button type="submit">Adicionar ao carrinho</button>
-            </form>
+                <a href="{% url 'detalhe_produto' produto.pk %}" class="linha-imagem-texto-produto">
+                    <div class="coluna-imagem">
+                        <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="imagem-produto">    
+                    </div>
+                
+                    <div class="coluna-nome-preco-estoque">
+                        <h3 class="texto-produto">{{ produto.nome }}</h3>
+                        <h2 class="texto-produto">R$ {{ produto.preco_formatado }}</h2>
+                        <p>Quantidade Estoque: {{ produto.quantidade_estoque }}</p>
+                    </div>
+                </a>
+                <form method="post" action="{% url 'adicionar_produto' produto.id %}" class="form-botao-add-carrinho">
+                    {% csrf_token %}
+                    <button type="submit">Adicionar ao carrinho</button>
+                </form>
         </div>
     {% endfor %}
     </div>
