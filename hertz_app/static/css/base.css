@@ -58,11 +58,6 @@ a{
     flex-direction: column;
 }
 
-.imagem-produto{
-    width: 10vw;
-    min-height: 18vh;
-}
-
 .coluna-imagem, .coluna-nome-preco-estoque{
     display: flex;
     flex-direction: column;
@@ -74,6 +69,12 @@ a{
     margin-top: 10px;
     justify-content: center;
 }
+.coluna-imagem .imagem-produto{
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+    border-radius: 5px;
+}
 
 .linha-imagem-texto-produto{
     display: flex;
@@ -81,16 +82,27 @@ a{
 }
 
 .texto-produto{
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
 }
 
 .nome-produto{
-    width: 200px; 
-    overflow: hidden;
+    width: 10vw; 
     text-overflow: ellipsis;
 }
 
 .form-botao-add-carrinho{
     margin-top: 0.5vw;
 }
+
+.botao-add-carrinho{
+    background-color: #3988fe;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    height: 3vh;
+    padding: 0.3vw;
+}
+
+
+
 
