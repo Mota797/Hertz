@@ -14,6 +14,12 @@
             <li class="lista-cabecalho__item">
                 <a href="{% url 'home' %}"><img src="{% static 'images/Hz_logo.png' %}" alt="" class="imagem-cabecalho"></a>
             </li>
+            <li>
+                <form method="get" action="">
+                    <input type="text" name="pesquisar" value="{{ request.GET.q }}">
+                    <button type="submit">pesquisar</button>
+                </form>
+            </li>
             <li class="lista-cabecalho__item">
                 <a href="{% url 'carrinho' %}">Carrinho</a>
             </li>
