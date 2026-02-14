@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- {% block header %}
+    <form method="get" action="" class="form-pesquisa">
+        <input type="text" name="pesquisar" value="{{ request.GET.q }}" placeholder="Digite aqui o que você deseja encontrar..." class="barra-pesquisa">
+        <button type="submit" class="botao-pesquisa"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+{% endblock %} -->
 <main>
     <div class="grid-produtos">
     {% for produto in produtos %}
@@ -17,7 +23,6 @@
                     <div class="coluna-nome-preco-estoque">
                         <h3 class="texto-produto nome-produto" id="nome_produto">{{ produto.nome }}</h3>
                         <h2 class="texto-produto">R$ {{ produto.preco_formatado }}</h2>
-                        <p>Quantidade Estoque: {{ produto.quantidade_estoque }}</p>
                     </div>
                 </a>
                 

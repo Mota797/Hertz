@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from .models import Produto
+from django.views.generic import TemplateView
+from .models import Produto, Avaliacao
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
@@ -22,4 +23,12 @@ class home(ListView):
 class detail_product(DetailView):
     model = Produto
     template_name = 'detalhe_produto.html'
+
+class list_avaliacoes(ListView):
+    model = Avaliacao
+    template_name = 'avaliacoes.html'
+    context_object_name = 'avaliacoes'
+
+class sobre_nos(TemplateView):
+    template_name = 'sobre_nos.html'
 

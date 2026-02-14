@@ -1,30 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Ao clicar em 'Confirmar Compra' você confirma a compra dos seguintes itens:</h1>
-{% for item in itens %}
-    <ul>
-        <li>
-            <p>{{ item.produto.nome }}</p>
-        </li>
-        <li>
-            <p>R$ {{ item.produto.preco_decimal }}</p>
-        </li>
-        <li>
-            <p>Quantidade: {{ item.quantidade }}</p>
-        </li>
-    </ul>
-{% endfor %}
-<li>
-    <p><strong>Total:</strong>{{ total|floatformat:2 }}</p>
-</li>
-<form  method="post" action="{% url 'confirmar_compra' %}">
-        {% csrf_token %}
-        <select name="metodo_pagamento" required>
-            <option value="pix">PIX</option>
-            <option value="cartao_de_credito">Cartão de Crédito</option>
-            <option value="cartao_de_debito">Cartão de Débito</option>
-        </select>
-        <button type="submit">Confirmar Compra</button>
-</form>
+<main>
+    <h1>Ao clicar em 'Confirmar Compra' você confirma a compra dos seguintes itens:</h1>
+    {% for item in itens %}
+        <ul>
+            <li>
+                <p>{{ item.produto.nome }}</p>
+            </li>
+            <li>
+                <p>R$ {{ item.produto.preco_decimal }}</p>
+            </li>
+            <li>
+                <p>Quantidade: {{ item.quantidade }}</p>
+            </li>
+        </ul>
+    {% endfor %}
+    <li>
+        <p><strong>Total:</strong>{{ total|floatformat:2 }}</p>
+    </li>
+    <form  method="post" action="{% url 'confirmar_compra' %}">
+            {% csrf_token %}
+            <select name="metodo_pagamento" required>
+                <option value="pix">PIX</option>
+                <option value="cartao_de_credito">Cartão de Crédito</option>
+                <option value="cartao_de_debito">Cartão de Débito</option>
+            </select>
+            <button type="submit">Confirmar Compra</button>
+    </form>
+</main>
 {% endblock %}

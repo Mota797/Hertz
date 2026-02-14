@@ -7,32 +7,64 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"> -->
 </head>
 <body>
     <header>
         <ul class="lista-cabecalho">
             <li class="lista-cabecalho__item item-logo-form">
                 <a href="{% url 'home' %}"><img src="{% static 'images/Hz_logo.png' %}" alt="" class="logo-cabecalho"></a>
+                {% block header %}
                 <form method="get" action="" class="form-pesquisa">
                     <input type="text" name="pesquisar" value="{{ request.GET.q }}" placeholder="Digite aqui o que você deseja encontrar..." class="barra-pesquisa">
                     <button type="submit" class="botao-pesquisa"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
+                {% endblock %}
             </li>
             <li class="lista-cabecalho__item item-carrinho">
                 <a href="{% url 'carrinho' %}" class="link-carrinho"><i class="fa-solid fa-cart-shopping icone-item-carrinho"></i><p class="texto-item-carrinho">Carrinho</p></a>
             </li>
             <li class="lista-cabecalho__item item-login">
-                <a href="{% url 'login' %}"><img src="{% static 'images/icone-user.png '%}" alt="" class="img-icone-usuario"></a>
+                {% if user.is_authenticated %}
+                    <a href="#"><img src="{% static 'images/icone-user.png '%}" alt="" class="img-icone-usuario"></a>
+                {% else %}
+                    <a href="{% url 'login' %}"><img src="{% static 'images/icone-user.png '%}" alt="" class="img-icone-usuario"></a>
+                {% endif %}
             </li>
         </ul>
     </header>
         {% block content %}
-
         {% endblock %}
     <footer>
-        <ul>
-            <li></li>
+        <ul class="lista-rodape">
+            <li class="lista-rodape__item">
+                <h3>
+                    Conheça e compre na Hertz
+                </h3>
+                <ul class="lista-dentro-da-lista-rodape">
+                    <li class="lista-dentro-da-lista-rodape__item">
+                        <a href="{% url 'sobre_nos' %}">Sobre a Hertz</a>
+                    </li>
+                    <li class="lista-dentro-da-lista-rodape__item">
+                        <a href="{% url 'register' %}">Crie Sua Conta</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="lista-rodape__item">
+                <p>
+                    <b>Hertz - Todos os Direitos Reservados &copy;</b>
+                </p>
+            </li>
+            <li class="lista-rodape__item">
+                <h3>Já possui uma conta ? entre no seu perfil !</h3>
+                <ul class="lista-dentro-da-lista-rodape">
+                    <li class="lista-dentro-da-lista-rodape__item">
+                        <a href="{% url 'login' %}">
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </footer>
 </body>

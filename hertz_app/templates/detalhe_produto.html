@@ -2,18 +2,22 @@
 
 {% block content %}
 <main>
-    <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="imagem-produto">
-    <h1>{{ produto.nome }}</h1>
-    <h3>{{ produto.preco_formatado }}</h3>
-    <p>Quantidade em Estoque: {{ produto.quantidade_estoque }}</p>
-    <form method="post" action="{% url 'adicionar_produto' produto.id %}">
-        {% csrf_token %}
-        <button type="submit">Adicionar ao carrinho</button>
-    </form>
-    {% if produto.media_avaliacoes %}
-        <p>{{ produto.media_avaliacoes }}</p>
-    {% else %}
-        <p>Não há avaliações</p>
-    {% endif %}
+    <div class="container-produto-detalhe">
+        <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="imagem-produto">
+        <h1 class="nome-produto-detalhe">{{ produto.nome }}</h1>
+        <h3>{{ produto.preco_formatado }}</h3>
+        <p>Quantidade em Estoque: {{ produto.quantidade_estoque }}</p>
+        {% if produto.media_avaliacoes %}
+            <p>Média de Avaliações: {{ produto.media_avaliacoes }}</p>
+        {% else %}
+            <p>Não há avaliações</p>
+        {% endif %}
+        <form method="post" action="{% url 'adicionar_produto' produto.id %}" class="formulario-carrinho-detalhe">
+            {% csrf_token %}
+            <button type="submit" class="botao-add-carrinho botao-add-carrinho-detalhe">Adicionar ao carrinho</button>
+        </form>
+        
+    </div>
+    
 </main>
 {% endblock %}
