@@ -7,7 +7,7 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/base.css' %}">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body>
     <header>
@@ -59,9 +59,15 @@
                 <h3>Já possui uma conta ? entre no seu perfil !</h3>
                 <ul class="lista-dentro-da-lista-rodape">
                     <li class="lista-dentro-da-lista-rodape__item">
-                        <a href="{% url 'login' %}">
-                            Login
-                        </a>
+                        {% if user.is_authenticated %}
+                            <a href="#">
+                                Login
+                            </a>
+                        {% else %}
+                            <a href="{% url 'login' %}">
+                                Login
+                            </a>
+                        {% endif %}
                     </li>
                 </ul>
             </li>

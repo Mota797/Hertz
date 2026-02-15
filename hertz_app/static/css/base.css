@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 /* Base.html */
 *{
@@ -196,7 +196,24 @@ a{
 .container-produto-detalhe img{
     border-radius: 5px;
     width: 35vw;
-    margin: auto 10vw auto 10vw;
+    margin: auto 12vw auto 12vw;
+}
+
+.lista-carrossel-detalhe{
+    overflow: hidden;
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    flex: 1;
+    height: calc(2 * 30vh);
+}
+
+.lista-carrossel-detalhe__item{
+    min-width: 100%;
+}
+
+.lista-e-botoes-carrossel{
+    display: flex;
 }
 
 .nome-produto-detalhe{

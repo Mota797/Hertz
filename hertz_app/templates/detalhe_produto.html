@@ -1,9 +1,24 @@
 {% extends 'base.html' %}
 
+{% load static %}
 {% block content %}
 <main>
     <div class="container-produto-detalhe">
-        <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="imagem-produto">
+        <div class="lista-e-botoes-carrossel">
+            <button type="button" id="passar_esquerda"><</button>
+            <ul class="lista-carrossel-detalhe" id="lista_carrossel_detalhe">
+                <li class="lista-carrossel-detalhe__item" id="img_carrossel_produto1">
+                    <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="imagem-produto">
+                </li>
+                <li class="lista-carrossel-detalhe__item" id="img_carrossel_produto2">
+                    <img src="{{ produto.imagem_carrossel_um.url  }}" alt="{{ produto.nome }}" class="imagem-produto-carrossel">
+                </li>
+                <li class="lista-carrossel-detalhe__item" id="img_carrossel_produto3">
+                    <img src="{{ produto.imagem_carrossel_dois.url }}" alt="{{ produto.nome }}" class="imagem-produto-carrossel">
+                </li>
+            </ul>
+            <button type="button" id="passar_direita">></button>
+        </div>
         <h1 class="nome-produto-detalhe">{{ produto.nome }}</h1>
         <h3>{{ produto.preco_formatado }}</h3>
         <p>Quantidade em Estoque: {{ produto.quantidade_estoque }}</p>
@@ -17,7 +32,7 @@
             <button type="submit" class="botao-add-carrinho botao-add-carrinho-detalhe">Adicionar ao carrinho</button>
         </form>
         
-    </div>
-    
+    </div>    
 </main>
+<script src="{% static 'js/carrossel.js' %}"></script>
 {% endblock %}

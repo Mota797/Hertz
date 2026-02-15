@@ -19,6 +19,9 @@ class Produto(models.Model):
     quantidade_estoque = models.IntegerField()
     categoria = models.CharField(max_length=200, choices=CATEGORIAS_CHOICES, blank=True)
     imagem = models.ImageField(default='padrao.png')
+    imagem_carrossel_um = models.ImageField(default='padrao.png')
+    imagem_carrossel_dois = models.ImageField(default='padrao.png')
+ 
 
 
     def preco_decimal(self):
