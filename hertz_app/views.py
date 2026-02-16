@@ -23,11 +23,8 @@ class home(ListView):
 class detail_product(DetailView):
     model = Produto
     template_name = 'detalhe_produto.html'
+    context_object_name = 'produto'
 
-class list_avaliacoes(ListView):
-    model = Avaliacao
-    template_name = 'avaliacoes.html'
-    context_object_name = 'avaliacoes'
 
 class sobre_nos(TemplateView):
     template_name = 'sobre_nos.html'

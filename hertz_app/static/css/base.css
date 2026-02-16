@@ -258,3 +258,23 @@ a{
     height: 5vh;
 }
 
+.container-avaliacoes{
+    background-color: #3988fe;
+    margin: auto 5vw auto 5vw;
+    border-radius: 5px;
+    padding: 0.5vw;
+}
+
+.container-avaliacao-individual{
+    background-color: #f1f1f1;
+    padding: 0.5vw;
+    border-radius: 5px;
+}
+
+.linha-estrelas-nota{
+    display: flex;
+}
+
+.linha-estrela{
+    margin-left: 0.5vw;
+}

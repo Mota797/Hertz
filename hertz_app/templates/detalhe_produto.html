@@ -34,7 +34,17 @@
             <button type="submit" class="botao-add-carrinho botao-add-carrinho-detalhe">Adicionar ao carrinho</button>
         </form>
         
-    </div>    
+    </div>
+    <div class="container-avaliacoes">
+        {% for avaliacao in produto.avaliacao.all %}
+        <div class="container-avaliacao-individual">
+            <h3>{{ avaliacao.usuario }}</h3>
+            <div class="linha-estrelas-nota"><p>{{ avaliacao.nota_avaliacao }}</p><div class="container-estrelas" id="container_estrelas" data-nota="{{ avaliacao.nota_avaliacao }}"></div></div>
+            <p>{{ avaliacao.comentario_avaliacao }}</p>
+        </div>
+        {% endfor %}
+    </div>
 </main>
 <script src="{% static 'js/carrossel.js' %}"></script>
+<script src="{% static 'js/estrelas-avaliacao.js' %}"></script>
 {% endblock %}
