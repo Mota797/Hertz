@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load l10n %}
 {% block content %}
+<main>
 <h1>Carrinho</h1>
     <ul>
         {% for item in itens %}
@@ -30,8 +31,9 @@
             <li>
                 <p><strong>Total:</strong>{{ total|floatformat:2|unlocalize }}</p>
             </li>
+            <a href="{% url 'pagina_confirmacao_compra' %}">Comprar</a>
         {% endif %}
-
-        <a href="{% url 'pagina_confirmacao_compra' %}">Comprar</a>
+        
     </ul> 
+</main>      
 {% endblock %}

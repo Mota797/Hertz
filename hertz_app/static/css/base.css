@@ -258,11 +258,13 @@ a{
     height: 5vh;
 }
 
-.container-avaliacoes{
+.container-avaliacoes, .formulario-avaliacao{
     background-color: #3988fe;
     margin: auto 5vw auto 5vw;
     border-radius: 5px;
     padding: 0.5vw;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .container-avaliacao-individual{
@@ -277,4 +279,31 @@ a{
 
 .linha-estrela{
     margin-left: 0.5vw;
+}
+
+.avaliacao-textarea{
+    display: flex;
+    flex: 1;
+    width: 80vw;
+    resize: none;
+    border-radius: 5px;
+}
+
+.estrelas span {
+    font-size: 30px;
+    cursor: pointer;
+    color: #ccc;
+    transition: 0.2s;
+}
+
+.estrelas span.ativa {
+    color: gold;
+}
+
+.botao-enviar-avaliacao{
+    background-color: #fff;
+    width: 30vw;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
 }

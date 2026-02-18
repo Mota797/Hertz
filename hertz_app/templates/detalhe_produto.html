@@ -35,16 +35,41 @@
         </form>
         
     </div>
-    <div class="container-avaliacoes">
-        {% for avaliacao in produto.avaliacao.all %}
-        <div class="container-avaliacao-individual">
-            <h3>{{ avaliacao.usuario }}</h3>
-            <div class="linha-estrelas-nota"><p>{{ avaliacao.nota_avaliacao }}</p><div class="container-estrelas" id="container_estrelas" data-nota="{{ avaliacao.nota_avaliacao }}"></div></div>
-            <p>{{ avaliacao.comentario_avaliacao }}</p>
+    <form method="post" class="formulario-avaliacao">
+        {% csrf_token %}
+
+        <div class="estrelas">
+            <span data-value="1">★</span>
+            <span data-value="2">★</span>
+            <span data-value="3">★</span>
+            <span data-value="4">★</span>
+            <span data-value="5">★</span>
         </div>
-        {% endfor %}
-    </div>
+        {{ form.nota_avaliacao }}
+        
+        <div class="comentario">
+            <label for="{{ form.comentario_avaliacao.id_for_label }}">
+                Comentário
+            </label>
+            {{ form.comentario_avaliacao }}
+        </div>
+        <button type="submit" class="botao-enviar-avaliacao">Avaliar</button>
+    </form>
+    {% if produto.avaliacao.exists %}
+        <div class="container-avaliacoes">
+            {% for avaliacao in produto.avaliacao.all %}
+            <div class="container-avaliacao-individual">
+                <h3>{{ avaliacao.usuario }}</h3>
+                <div class="linha-estrelas-nota"><p>{{ avaliacao.nota_avaliacao | floatformat:1 }}</p><div class="container-estrelas" id="container_estrelas" data-nota="{{ avaliacao.nota_avaliacao }}"></div></div>
+                <p>{{ avaliacao.comentario_avaliacao }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+    <p>Não há avalições desse produto no momento</p>
+    {% endif %}
 </main>
 <script src="{% static 'js/carrossel.js' %}"></script>
 <script src="{% static 'js/estrelas-avaliacao.js' %}"></script>
+<script src="{% static 'js/selecionar-estrelas-avaliacao.js' %}"></script>
 {% endblock %}
