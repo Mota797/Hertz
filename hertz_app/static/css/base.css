@@ -263,7 +263,6 @@ a{
     margin: auto 5vw auto 5vw;
     border-radius: 5px;
     padding: 0.5vw;
-    gap: 10px;
     margin-bottom: 10px;
 }
 
@@ -284,9 +283,25 @@ a{
 .avaliacao-textarea{
     display: flex;
     flex: 1;
-    width: 80vw;
+    width: 65vw;
     resize: none;
     border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.formulario-avaliacao{
+    color: #fff;
+    width: 70vw;
+}
+
+.avaliacao-textarea:focus{
+    outline: none;
+    border: #3988fe solid 2px;
+}
+
+.avaliacao-textarea::placeholder{
+    font-size: 14px;
 }
 
 .estrelas span {
@@ -297,7 +312,7 @@ a{
 }
 
 .estrelas span.ativa {
-    color: gold;
+    color: #FEEA3B;
 }
 
 .botao-enviar-avaliacao{
@@ -306,4 +321,9 @@ a{
     height: 5vh;
     border: none;
     border-radius: 5px;
+    transition: all 0.4s;
+}
+
+.botao-enviar-avaliacao:hover{
+    background-color: #FEEA3B;
 }

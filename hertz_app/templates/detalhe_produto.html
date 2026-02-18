@@ -25,7 +25,7 @@
         <h3>{{ produto.preco_formatado }}</h3>
         <p>Quantidade em Estoque: {{ produto.quantidade_estoque }}</p>
         {% if produto.media_avaliacoes %}
-            <p>Média de Avaliações: {{ produto.media_avaliacoes }}</p>
+            <p>Média de Avaliações: {{ produto.media_avaliacoes | floatformat:1 }}</p>
         {% else %}
             <p>Não há avaliações</p>
         {% endif %}
@@ -36,6 +36,8 @@
         
     </div>
     <form method="post" class="formulario-avaliacao">
+
+        <h3>Avalie o Produto</h3>
         {% csrf_token %}
 
         <div class="estrelas">
