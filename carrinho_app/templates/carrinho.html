@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 {% load l10n %}
 {% block content %}
+{% load static %}
+{% block header %}{% endblock %}
 <main>
 <h1>Carrinho</h1>
-    <ul>
+    <ul class="master-lista-container-carrinho">
         {% for item in itens %}
-            <li>
-                <ul>
+            <li class="container-produto-carrinho">
+                <ul class="lista-container-produto-carrinho">
+                    <li>
+                        <img src="{{ item.produto.imagem.url }}" alt="" class="imagem-produto-carrinho">
+                    </li>
                     <li>
                         <p>{{ item.produto.nome }}</p>
                     </li>
@@ -17,9 +22,9 @@
                         <p>{{ item.quantidade }}</p>
                     </li>
                     <li>
-                        <form method="post" action="{% url 'remover_produto' item.id %}">
+                        <form method="post" action="{% url 'remover_produto' item.id %}" >
                             {% csrf_token %}
-                            <button type="submit">Remover Produto</button>
+                            <button type="submit" class="botao-remover-produto">Remover Produto</button>
                         </form>
                     </li>
                 </ul>
@@ -27,13 +32,12 @@
             {% empty %}
                 <h2>Seu Carrinho está Vazio</h2>
         {% endfor %}
-        {% if itens %}
-            <li>
-                <p><strong>Total:</strong>{{ total|floatformat:2|unlocalize }}</p>
-            </li>
-            <a href="{% url 'pagina_confirmacao_compra' %}">Comprar</a>
-        {% endif %}
-        
     </ul> 
+    {% if itens %}
+        <div class="div-total-confirma">
+            <h3><strong>Total:</strong>{{ total|floatformat:2|unlocalize }}</h3>
+            <a href="{% url 'pagina_confirmacao_compra' %}" class="link-confirmar-compra">Comprar</a>
+        </div>
+    {% endif %}
 </main>      
 {% endblock %}

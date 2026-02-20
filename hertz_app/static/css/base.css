@@ -293,6 +293,7 @@ a{
 .formulario-avaliacao{
     color: #fff;
     width: 70vw;
+    margin: 10px auto 10px auto ;
 }
 
 .avaliacao-textarea:focus{
@@ -326,4 +327,65 @@ a{
 
 .botao-enviar-avaliacao:hover{
     background-color: #FEEA3B;
+}
+
+/* carrinho */
+.master-lista-container-carrinho{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.container-produto-carrinho{
+    margin: 1.5vh;
+    list-style-type: none;
+}
+
+.lista-container-produto-carrinho{
+    list-style-type: none;
+}
+
+.imagem-produto-carrinho{
+    width: 15vw;
+}
+
+.botao-remover-produto{
+    background-color: #E6153B;
+    color: #fff;
+    font-size: 15px;
+    min-width: 10vw;
+    height: 4vh;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s;
+}
+
+.botao-remover-produto:hover{
+    box-shadow: 2px 2px 3px #000;
+}
+
+.div-total-confirma{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    margin: 1vh;
+}
+
+.link-confirmar-compra{
+    background-color: #3988fe;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px;
+    width: 20vw;
+    height: 4vh;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.link-confirmar-compra:hover{
+    background-color: #65a1fc;
 }
