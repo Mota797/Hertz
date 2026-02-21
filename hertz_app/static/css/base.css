@@ -69,7 +69,8 @@ a{
     border: none;
     border-radius: 5px;
     padding: 5px;
-    min-width: 20vw;
+    min-width: 30vw;
+    transition: all 0.3s;
 }
 
 .botao-pesquisa{
@@ -85,8 +86,14 @@ a{
     margin: 0.25vw;
 }
 
-.item-login .img-icone-usuario{
-    width: 3vw;
+.item-login .img-icone-usuario, .icone-logout{
+    width: 2.5vw;
+}
+
+.botao-logout{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .lista-rodape{
@@ -329,7 +336,16 @@ a{
     background-color: #FEEA3B;
 }
 
+.p-sem-avaliacao{
+    text-align: center;
+    margin: 1vw;
+}
+
 /* carrinho */
+.h1-carrinho{
+    text-align: center;
+}
+
 .master-lista-container-carrinho{
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -338,14 +354,29 @@ a{
 .container-produto-carrinho{
     margin: 1.5vh;
     list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .lista-container-produto-carrinho{
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.coluna-info-itens{
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+.coluna-imagem-info{
+    margin-top: auto;
 }
 
 .imagem-produto-carrinho{
-    width: 15vw;
+    width: 10vw;
 }
 
 .botao-remover-produto{
@@ -388,4 +419,12 @@ a{
 
 .link-confirmar-compra:hover{
     background-color: #65a1fc;
+    box-shadow: 2px 2px 3px #000;
+}
+
+.h2-carrinho-vazio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
 }
