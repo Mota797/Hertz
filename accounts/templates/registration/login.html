@@ -1,13 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'base-accounts.html' %}
 
 {% block content %}
 {% block header %}{% endblock %}
-<main>
-    <form method="post">
+    <form method="post" class="form-login">
+        <h1>Login</h1>
         {% csrf_token %}
         {{ form.as_p}}
-        <button type="submit">Entrar</button>
-        <a href="{% url 'password_reset' %}">Esqueceu sua senha ?, clique aqui</a>
+        <button type="submit" class="botao-login">Entrar</button>
+        <a href="{% url 'password_reset' %}" class="link-resetar-senha">Esqueceu sua senha ?, clique aqui</a>
     </form>
-</main>
 {% endblock %}

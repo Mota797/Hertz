@@ -428,3 +428,66 @@ a{
     align-items: center;
     height: 20vh;
 }
+/* base-accounts */
+.header-accounts{
+    background: #FEEA3B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hz-logo-accounts{
+    width: 8vw;
+}
+
+.main-accounts{
+    background: linear-gradient(#FEEA3B, #3988fe);
+}
+
+.footer-accounts{
+    background: linear-gradient(#3988fe, #E6153B);
+}
+
+/* login */
+
+.form-login{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 40vw;
+    height: 80vh;
+    box-shadow: 5px -10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    gap: 2vh;
+    padding: 2.5vw;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.form-login input{
+    width: 20vw;
+    height: 5vh;
+    border-radius: 5px;
+}
+
+.form-login label{
+    display: block;
+}
+
+.form-login input:focus{
+    border: none;
+}
+
+.botao-login{
+    background-color: #3988fe;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    height: 4vh;
+    width: 20vw;
+}
+
+.link-resetar-senha{
+    color: #fff;
+}
