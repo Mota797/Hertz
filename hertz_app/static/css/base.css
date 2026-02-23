@@ -451,7 +451,7 @@ a{
     background: linear-gradient(#3988fe, #E6153B);
 }
 
-/* login */
+/* templates do app accounts */
 
 .form-account{
     background-color: rgba(0, 0, 0, 0.7);
@@ -466,8 +466,6 @@ a{
     border-radius: 5px;
     color: #fff;
 }
-
-
 
 .form-account input{
     width: 25vw;
@@ -509,4 +507,71 @@ a{
 
 .form-register{
     gap: 2vh;
+}
+
+/* sobre nos */
+.main-sobre-nos{
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.fabrica-dispositivos-img{
+    border-radius: 5px;
+    width: 30vw;
+}
+
+.texto-imagem-sobre-nos{
+    margin: 2vh 0;
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    padding: 2vw;
+    background-color: #f1f1f1;
+}
+
+.coluna-p-sobre-nos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3vh;
+}
+
+.container-valores{
+    align-self: center;
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw;
+    grid-template-rows: 30vh;
+    gap: 2vw;
+}
+
+.valor{
+    display: flex;
+    justify-content: center;
+    padding: 2vw;
+    border-radius: 5px;
+}
+
+.valor-respeito{
+    background-color: #3988fe;
+}
+
+.valor-respeito:hover{
+    background-color: #65a1fc;
+}
+
+.valor-inovacao{
+    background-color: #FEEA3B;
+}
+
+.valor-inovacao:hover{
+    background-color: #faea5e;
+}
+
+.valor-qualidade{
+    background-color: #E6153B;
+}
+
+.valor-qualidade:hover{
+    background-color: #e63757;
 }

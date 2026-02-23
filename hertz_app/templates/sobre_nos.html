@@ -3,13 +3,24 @@
 {% block content %}
 {% load static %}
 {% block header %}{% endblock %}
-<main>
-    <h3>Sobre a Hertz</h3>
-
-    <p>
-        A loja <b>Hertz</b> foi fundada em Janeiro de 2026, com o propósito de fornecer produtos relacionados ao som com a melhor qualidade possível, prezando por um bom atendimento. Nosso principal objetivo é vender os produtos com cuidado desde o armazenamento até a escolha de parceiros ideais para fabricação e transporte dos mesmos. Fazemos isso com carinho de cada colaborador e uma cultura de respeito e qualidade dentro da nossa empresa.
-    </p>
-
-    <img src="{% static 'images/fabrica-dispositivos.png' %}" alt="fabrica-dispositivos" />
+<main class="main-sobre-nos">
+    <h2>Sobre a Hertz</h2>
+    <div class="texto-imagem-sobre-nos">
+        <img src="{% static 'images/fabrica-dispositivos.png' %}" alt="fabrica-dispositivos" class="fabrica-dispositivos-img"/>
+        <div class="coluna-p-sobre-nos">
+            <p>
+                A loja <b>Hertz</b> foi fundada em Janeiro de 2026, com o propósito de fornecer produtos relacionados ao som com a melhor qualidade possível, prezando por um bom atendimento. Nosso principal objetivo é vender os produtos com cuidado desde o armazenamento até a escolha de parceiros ideais para fabricação e transporte dos mesmos. Fazemos isso com carinho de cada colaborador e uma cultura de respeito e qualidade dentro da nossa empresa.
+            </p>
+            <p>
+                Atualmente nossa empresa atua apenas com vendas dentro do Brasil, porém, em alguns anos, pretendemos extender nosso alcance para toda a américa e, em uma década, planejamos expandir as vendas para o mundo todo, por meio de parcerias que estimulem não só as vendas da nossa empresa como também possuam culturas de trabalho semelhantes e estejam dispostas a inovar no mercado. 
+            </p>
+        </div>
+    </div>
+    <h2>Valores</h2>
+    <div class="container-valores">
+        <div class="valor valor-respeito"><h2>Respeito</h2></div>
+        <div class="valor valor-inovacao"><h2>Inovação</h2></div>
+        <div class="valor valor-qualidade"><h2>Qualidade</h2></div>
+    </div>
 </main>
 {% endblock %}
