@@ -442,6 +442,9 @@ a{
 
 .main-accounts{
     background: linear-gradient(#FEEA3B, #3988fe);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .footer-accounts{
@@ -450,44 +453,60 @@ a{
 
 /* login */
 
-.form-login{
+.form-account{
     background-color: rgba(0, 0, 0, 0.7);
-    width: 40vw;
-    height: 80vh;
-    box-shadow: 5px -10px rgba(0, 0, 0, 0.4);
+    box-shadow: 5px 8px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
-    gap: 2vh;
+    height: 55vh;
+    margin: auto 33vw;
+    gap: 4vh;
     padding: 2.5vw;
     border-radius: 5px;
     color: #fff;
 }
 
-.form-login input{
-    width: 20vw;
+
+
+.form-account input{
+    width: 25vw;
     height: 5vh;
     border-radius: 5px;
 }
 
-.form-login label{
+.form-account label{
     display: block;
 }
 
-.form-login input:focus{
+.form-account input:focus{
     border: none;
 }
 
-.botao-login{
+.botao-account{
     background-color: #3988fe;
     color: #fff;
     border: none;
     border-radius: 5px;
-    height: 4vh;
-    width: 20vw;
+    height: 5vh;
+    width: 8vw;
+    font-size: 15px;
+    margin: 1.5vw;
 }
 
-.link-resetar-senha{
+.botao-account:hover{
+    background-color: #65a1fc;
+}
+
+.form-account a{
     color: #fff;
+    transition: 0.3s;
+}
+
+.form-account a:hover{
+    color: #f1f1f1;
+}
+
+.form-register{
+    gap: 2vh;
 }

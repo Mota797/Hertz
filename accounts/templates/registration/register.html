@@ -1,14 +1,25 @@
-{% extends "base.html" %}
+{% extends "base-accounts.html" %}
 
 {% block content %}
 {% block header %}{% endblock %}
 <main>
-    <h2>Criar conta</h2>
-
-    <form method="post">
+    <form method="post" class="form-register form-account">
+        <h2>Criar conta</h2>
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Cadastrar</button>
+        <p>
+            {{ form.username.label_tag }}
+            {{ form.username }}
+        </p>
+        <p>
+            {{ form.password1.label_tag }}
+            {{ form.password1 }}
+        </p>
+        <p>
+            {{ form.password2.label_tag }}
+            {{ form.password2 }}
+        </p>
+        <button type="submit" class="botao-account">Cadastrar</button>
+        <p>Já possui Uma conta? Faça <a href="{% url 'login' %}" class="link-login">login</a></p>
     </form>
 </main>
 {% endblock %}
