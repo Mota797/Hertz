@@ -4,7 +4,7 @@
 {% load static %}
 {% block header %}{% endblock %}
 <main class="main-sobre-nos">
-    <h2>Sobre a Hertz</h2>
+    <h2 class="titulos">Sobre a Hertz</h2>
     <div class="texto-imagem-sobre-nos">
         <img src="{% static 'images/fabrica-dispositivos.png' %}" alt="fabrica-dispositivos" class="fabrica-dispositivos-img"/>
         <div class="coluna-p-sobre-nos">
@@ -16,11 +16,26 @@
             </p>
         </div>
     </div>
-    <h2>Valores</h2>
+    <h2 class="titulos">Valores</h2>
     <div class="container-valores">
-        <div class="valor valor-respeito"><h2>Respeito</h2></div>
-        <div class="valor valor-inovacao"><h2>Inovação</h2></div>
-        <div class="valor valor-qualidade"><h2>Qualidade</h2></div>
+        <div class="valor valor-respeito">
+            <h2>Respeito</h2>
+            <audio controls>
+                <source src="{% static 'audio/lingua-libre/respeito-audio.ogg' %}" type="audio/ogg">
+            </audio>
+        </div>
+        <div class="valor valor-inovacao">
+            <h2>Inovação</h2>
+            <audio controls>
+                <source src="{% static 'audio/ttsmaker/inovacao-audio.mp3' %}" type="audio/mp3">
+            </audio>
+        </div>
+        <div class="valor valor-qualidade">
+            <h2>Qualidade</h2>
+            <audio controls>
+                <source src="{% static 'audio/lingua-libre/qualidade-audio.ogg' %}" type="audio/ogg">
+            </audio>
+        </div>
     </div>
 </main>
 {% endblock %}
