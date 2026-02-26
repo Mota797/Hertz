@@ -20,22 +20,32 @@
     <div class="container-valores">
         <div class="valor valor-respeito">
             <h2>Respeito</h2>
-            <audio controls>
+            <button class="botao-play" id="botao_play_um">
+                <img src="{% static 'images/icone-som.png' %}" alt="" class="img-som">
+            </button>
+            <audio controls id="audio_um">
                 <source src="{% static 'audio/lingua-libre/respeito-audio.ogg' %}" type="audio/ogg">
             </audio>
         </div>
         <div class="valor valor-inovacao">
             <h2>Inovação</h2>
-            <audio controls>
+            <button class="botao-play" id="botao_play_dois">
+                <img src="{% static 'images/icone-som.png' %}" alt="" class="img-som">
+            </button>
+            <audio controls id="audio_dois">
                 <source src="{% static 'audio/ttsmaker/inovacao-audio.mp3' %}" type="audio/mp3">
             </audio>
         </div>
         <div class="valor valor-qualidade">
             <h2>Qualidade</h2>
-            <audio controls>
+            <button class="botao-play" id="botao_play_tres">
+                <img src="{% static 'images/icone-som.png' %}" alt="" class="img-som">
+            </button>
+            <audio controls id="audio_tres" class="audio-tres">
                 <source src="{% static 'audio/lingua-libre/qualidade-audio.ogg' %}" type="audio/ogg">
             </audio>
         </div>
     </div>
+    <script src="{% static 'js/botao-play-som.js' %}"></script>
 </main>
 {% endblock %}

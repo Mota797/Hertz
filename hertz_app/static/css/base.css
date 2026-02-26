@@ -518,13 +518,10 @@ a{
 
 .titulos{
     transition: all 0.3s;
-    padding: 2px;
+    padding: 2vw;
     margin: 2vw;
     text-align: center;
-}
-
-.titulos:hover{
-    background-color: #f1f1f1;
+    background-color: #f1f1f1
 }
 
 .fabrica-dispositivos-img{
@@ -560,6 +557,7 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     padding: 2vw;
     border-radius: 5px;
 }
@@ -586,4 +584,17 @@ a{
 
 .valor-qualidade:hover{
     background-color: #e63757;
+}
+
+.botao-play{
+    background-color: transparent;
+    border: none;
+}
+
+.img-som{
+    width: 2vw;
+}
+
+audio{
+    display: none;
 }
