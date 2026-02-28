@@ -341,24 +341,24 @@ a{
     margin: 1vw;
 }
 
-/* carrinho */
-.h1-carrinho{
+/* carrinho e confirmar compra*/
+.h1-carrinho, .h1-compras{
     text-align: center;
 }
 
-.master-lista-container-carrinho{
+.master-lista-container-carrinho, .master-lista-container-compras{
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
 
-.container-produto-carrinho{
+.container-produto-carrinho, .container-produto-compras{
     margin: 1.5vh;
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
 }
 
-.lista-container-produto-carrinho{
+.lista-container-produto-carrinho, .lista-container-produto-compras{
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -403,7 +403,7 @@ a{
     margin: 1vh;
 }
 
-.link-confirmar-compra{
+.link-confirmar-compra, .botao-confirmar-compra{
     background-color: #3988fe;
     color: #fff;
     font-size: 15px;
@@ -415,9 +415,10 @@ a{
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    border: none;
 }
 
-.link-confirmar-compra:hover{
+.link-confirmar-compra:hover, .botao-confirmar-compra:hover{
     background-color: #65a1fc;
     box-shadow: 2px 2px 3px #000;
 }
@@ -428,6 +429,39 @@ a{
     align-items: center;
     height: 20vh;
 }
+
+.form-confirmacao-compra{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vh;
+}
+
+select{
+    border-radius: 5px;
+    width: 25vw;
+    height: 5vh;
+    padding: 0.5vw;
+    background-color: #FEEA3B;
+    outline: auto;
+    border: none;
+}
+
+select:hover{
+    background-color: #faea5e;
+}
+
+select::backdrop{
+    border: none;
+}
+
+option{
+    height: 5vh;
+    padding: 0.5vw;
+    background-color: #FEEA3B;
+}
+
 /* base-accounts */
 .header-accounts{
     background: #FEEA3B;
@@ -471,6 +505,7 @@ a{
     width: 25vw;
     height: 5vh;
     border-radius: 5px;
+    padding-left: 0.5vw;
 }
 
 .form-account label{
@@ -507,6 +542,14 @@ a{
 
 .form-register{
     gap: 2vh;
+}
+
+.link-p-accounts{
+    transition: all 0.3s;
+}
+
+.link-p-accounts:hover{
+    transform: translateY(2px);
 }
 
 /* sobre nos */

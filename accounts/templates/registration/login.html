@@ -7,7 +7,7 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="botao-account">Entrar</button>
-        <a href="{% url 'password_reset' %}" class="link-resetar-senha">Esqueci minha senha</a>
-        <a href="{% url 'register' %}">Crie sua conta</a>
+        <a href="{% url 'password_reset' %}" class="link-resetar-senha link-p-accounts">Esqueci minha senha</a>
+        <a href="{% url 'register' %}" class="link-p-accounts">Crie sua conta</a>
     </form>
 {% endblock %}
