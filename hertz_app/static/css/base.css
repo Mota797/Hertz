@@ -484,6 +484,14 @@ option{
 .footer-accounts{
     background: linear-gradient(#3988fe, #E6153B);
 }
+/* pagina sucesso compras */
+
+.main-pagina-sucesso-compras{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 /* templates do app accounts */
 
