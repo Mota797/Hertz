@@ -86,7 +86,7 @@ a{
     margin: 0.25vw;
 }
 
-.item-login .img-icone-usuario, .icone-logout{
+.item-login .img-icone-usuario{
     width: 2.5vw;
 }
 
@@ -94,6 +94,10 @@ a{
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+.icone-item-carrinho, .botao-logout{
+    font-size: 20px;
 }
 
 .lista-rodape{
@@ -271,6 +275,12 @@ a{
     border-radius: 5px;
     padding: 0.5vw;
     margin-bottom: 10px;
+}
+
+.container-avaliacoes{
+    display: flex;
+    flex-direction: column;  
+    gap: 2vh;
 }
 
 .container-avaliacao-individual{

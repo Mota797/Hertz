@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% block title %}
+    <title>{{ produto.nome }}</title>
+{% endblock %}
 {% block content %}
 {% block header %}{% endblock %}
 <main>
@@ -36,28 +39,30 @@
         </form>
         
     </div>
-    <form method="post" class="formulario-avaliacao">
+    {% if user.is_authenticated %}
+        <form method="post" class="formulario-avaliacao">
 
-        <h3>Avalie o Produto</h3>
-        {% csrf_token %}
+            <h3>Avalie o Produto</h3>
+            {% csrf_token %}
 
-        <div class="estrelas">
-            <span data-value="1">★</span>
-            <span data-value="2">★</span>
-            <span data-value="3">★</span>
-            <span data-value="4">★</span>
-            <span data-value="5">★</span>
-        </div>
-        {{ form.nota_avaliacao }}
-        
-        <div class="comentario">
-            <label for="{{ form.comentario_avaliacao.id_for_label }}">
-                Comentário
-            </label>
-            {{ form.comentario_avaliacao }}
-        </div>
-        <button type="submit" class="botao-enviar-avaliacao">Avaliar</button>
-    </form>
+            <div class="estrelas">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+            </div>
+            {{ form.nota_avaliacao }}
+            
+            <div class="comentario">
+                <label for="{{ form.comentario_avaliacao.id_for_label }}">
+                    Comentário
+                </label>
+                {{ form.comentario_avaliacao }}
+            </div>
+            <button type="submit" class="botao-enviar-avaliacao">Avaliar</button>
+        </form>
+    {% endif %}
     {% if produto.avaliacao.exists %}
         <div class="container-avaliacoes">
             {% for avaliacao in produto.avaliacao.all %}
