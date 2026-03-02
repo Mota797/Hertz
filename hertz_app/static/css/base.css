@@ -48,6 +48,7 @@ a{
     height: 15vh;
     padding-left: 1vw;;
     padding-right: 1vw;
+    gap: 2vw;
 }
 
 .lista-cabecalho__item{
@@ -86,14 +87,29 @@ a{
     margin: 0.25vw;
 }
 
+.item-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .item-login .img-icone-usuario{
     width: 2.5vw;
+}
+
+.formulario-logout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5vw;
 }
 
 .botao-logout{
     background-color: transparent;
     border: none;
     cursor: pointer;
+    flex: 1;
 }
 
 .icone-item-carrinho, .botao-logout{

@@ -31,7 +31,7 @@
             <li class="lista-cabecalho__item item-login">
                 {% if user.is_authenticated %}
                     <a href="#"><img src="{% static 'images/icone-user.png '%}" alt="" class="img-icone-usuario"></a>
-                    <form action="{% url 'logout' %}" method="post">
+                    <form action="{% url 'logout' %}" method="post" class="formulario-logout">
                         {% csrf_token %}
                         <button type="submit" class="botao-logout"><i class="fas fa-sign-out-alt" class="icone-logout"></i></button>
                     </form>
