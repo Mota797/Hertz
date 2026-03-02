@@ -160,6 +160,7 @@ a{
 .container-produto:hover{
     scale: 1.02;
     background-color: #bbbbbb;
+    box-shadow: 2px 2px 20px #000;
 }
 
 .coluna-imagem, .coluna-nome-preco-estoque{
